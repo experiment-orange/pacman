@@ -1,4 +1,5 @@
-image: crossdev/package-builder
-script:
-    - chown -R builder:builder .
-    - sudo -u builder makepkg -s --noconfirm
+build:
+    image: crossdev/package-builder
+    commands:
+        - chown -R builder:builder .
+        - sudo -u builder makepkg -s --noconfirm
