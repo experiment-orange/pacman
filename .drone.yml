@@ -2,4 +2,4 @@ image: crossdev/package-builder
 script:
     - id
     - chown -R builder:builder .
-    - sudo -u builder makepkg -s --noconfirm
+    - sudo -u builder makepkg -s --noconfirm --skippgpcheck
