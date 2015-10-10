@@ -1,3 +1,4 @@
 image: crossdev/package-builder
 script:
+    - id
     - makepkg -s
