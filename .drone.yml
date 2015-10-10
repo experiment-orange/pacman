@@ -1,4 +1,5 @@
 image: crossdev/package-builder
 script:
     - id
-    - makepkg -s
+    - chown -R builder:builder .
+    - sudo -u builder makepkg -s
