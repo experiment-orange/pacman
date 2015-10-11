@@ -9,6 +9,7 @@ build:
         - repo-add pacman.db.tar.gz *.tar.xz
         - unlink pacman.db
         - tar xvf pacman.db.tar.gz
+        - rm pacman.db.tar.gz
 
 publish:
     s3:
