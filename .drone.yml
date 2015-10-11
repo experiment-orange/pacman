@@ -2,9 +2,13 @@ build:
     image: crossdev/package-builder
     commands:
         - chown -R builder:builder .
-        - sudo -u builder makepkg -s --noconfirm
+        - sudo -u builder makepkg -s --noconfirm --nocheck
         - mkdir output
         - mv pacman*.tar.xz output/
+        - cd output
+        - repo-add pacman.db.tar.gz *.tar.xz
+        - unlink pacman.db
+        - tar xvf pacman.db.tar.gz
 
 publish:
     s3:
