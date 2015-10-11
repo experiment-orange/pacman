@@ -3,3 +3,16 @@ build:
     commands:
         - chown -R builder:builder .
         - sudo -u builder makepkg -s --noconfirm
+        - mkdir output
+        - mv pacman*.tar.xz output/
+
+publish:
+    s3:
+        acl: public-read
+        region: "eu-west-1"
+        bucket: "crossdev"
+        access_key: $$ACCESS_KEY
+        secret_key: $$SECRET_KEY
+        source: output
+        target: /prod/os/orange/
+        recursive: true
