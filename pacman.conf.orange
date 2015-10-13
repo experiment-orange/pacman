@@ -64,10 +64,6 @@ LocalFileSigLevel = Optional
 # uncommented to enable the repo.
 #
 
-[localbuilds]
-SigLevel = Never
-Server = file:///var/lib/makepkg/pkg
-
 # Locally built packages are placed to this local repository,
 # so that they are not updated on system update, because this
 # repository has the highest priority
@@ -75,8 +71,7 @@ Server = file:///var/lib/makepkg/pkg
 SigLevel = Never
 Server = file:///var/lib/makepkg/pkg
 
-# An example of a custom package repository.  See the pacman manpage for
-# tips on creating your own repositories.
-#[custom]
-#SigLevel = Optional TrustAll
-#Server = file:///home/custompkgs
+[orange]
+SigLevel = Never
+Server = http://52.19.90.102:8000/prod/os/orange
+

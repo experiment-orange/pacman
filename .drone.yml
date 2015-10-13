@@ -19,5 +19,5 @@ publish:
         access_key: $$ACCESS_KEY
         secret_key: $$SECRET_KEY
         source: output
-        target: /prod/os/orange/
+        target: /prod/os/x86_64/
         recursive: true
