@@ -1,6 +1,7 @@
 # vim: set ts=2 sw=2 et:
 
-pkgname=pacman-orange
+_pkgname=pacman
+pkgname=$_pkgname-orange
 pkgver=4.2.1
 pkgrel=5
 pkgdesc="A library-based package manager with dependency support"
@@ -17,7 +18,7 @@ conflicts=('pacman-contrib')
 replaces=('pacman-contrib')
 backup=(etc/pacman.conf etc/makepkg.conf)
 options=('strip' 'debug')
-source=(https://sources.archlinux.org/other/pacman/$pkgname-$pkgver.tar.gz{,.sig}
+source=(https://sources.archlinux.org/other/pacman/$_pkgname-$pkgver.tar.gz{,.sig}
         ensure-matching-database-and-package-version.patch
         pacman.conf.orange
         makepkg.conf)
@@ -30,13 +31,13 @@ validpgpkeys=()
 
 
 prepare() {
-  cd "$pkgname-$pkgver"
+  cd "$_pkgname-$pkgver"
 
   patch -p1 -i $srcdir/ensure-matching-database-and-package-version.patch
 }
 
 build() {
-  cd "$pkgname-$pkgver"
+  cd "$_pkgname-$pkgver"
 
   ./configure --prefix=/usr --sysconfdir=/etc \
     --localstatedir=/var --enable-doc \
@@ -47,11 +48,11 @@ build() {
 }
 
 check() {
-  make -C "$pkgname-$pkgver" check
+  make -C "$_pkgname-$pkgver" check
 }
 
 package() {
-  cd "$pkgname-$pkgver"
+  cd "$_pkgname-$pkgver"
 
   make DESTDIR="$pkgdir" install
   make DESTDIR="$pkgdir" -C contrib install
