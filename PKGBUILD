@@ -74,4 +74,7 @@ package() {
   done
 
   install -Dm644 contrib/PKGBUILD.vim "$pkgdir/usr/share/vim/vimfiles/syntax/PKGBUILD.vim"
+
+  mkdir -p $pkgdir/var/lib/makepkg/pkg/
+  tar czvf $pkgdir/var/lib/makepkg/pkg/local-builds.db --files-from /dev/null
 }
