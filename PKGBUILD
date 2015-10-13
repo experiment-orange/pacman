@@ -1,6 +1,6 @@
 # vim: set ts=2 sw=2 et:
 
-pkgname=pacman
+pkgname=pacman-orange
 pkgver=4.2.1
 pkgrel=5
 pkgdesc="A library-based package manager with dependency support"
