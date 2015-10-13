@@ -2,7 +2,7 @@ build:
     image: crossdev/package-builder
     commands:
         - chown -R builder:builder .
-        - sudo -u builder makepkg -s --noconfirm --no-check
+        - sudo -u builder makepkg -s --noconfirm --nocheck
         - mkdir output
         - mv pacman*.tar.xz output/
         - cd output
