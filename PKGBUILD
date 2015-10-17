@@ -3,7 +3,7 @@
 _pkgname=pacman
 pkgname=$_pkgname-orange
 pkgver=4.2.1
-pkgrel=6
+pkgrel=7
 pkgdesc="A library-based package manager with dependency support"
 arch=('i686' 'x86_64')
 url="http://www.archlinux.org/pacman/"
@@ -75,6 +75,10 @@ package() {
 
   install -Dm644 contrib/PKGBUILD.vim "$pkgdir/usr/share/vim/vimfiles/syntax/PKGBUILD.vim"
 
+  # Local builds database
   mkdir -p $pkgdir/var/lib/makepkg/pkg/
   tar czvf $pkgdir/var/lib/makepkg/pkg/local-builds.db --files-from /dev/null
+
+  # Cache folders referenced by /etc/makepkg.conf
+  install -dm1777 $pkgdir/var/lib/makepkg/source $pkgdir/var/cache/makepkg $pkgdir/var/lib/makepkg/pkg
 }
