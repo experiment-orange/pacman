@@ -66,7 +66,7 @@ LocalFileSigLevel = Optional
 
 [orange]
 SigLevel = Never
-Server = http://52.19.90.102:8000/prod/os/orange
+Server = http://52.30.213.60:8000/prod/os/orange
 
 # Locally built packages are placed to this local repository,
 # so that they are not updated on system update, because this
