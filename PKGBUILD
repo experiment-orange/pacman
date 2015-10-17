@@ -3,7 +3,7 @@
 _pkgname=pacman
 pkgname=$_pkgname-orange
 pkgver=4.2.1
-pkgrel=5
+pkgrel=6
 pkgdesc="A library-based package manager with dependency support"
 arch=('i686' 'x86_64')
 url="http://www.archlinux.org/pacman/"
