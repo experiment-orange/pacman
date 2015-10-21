@@ -1,6 +1,7 @@
 build:
     image: crossdev/package-builder
     commands:
+        - pacman -Sy
         - chown -R builder:builder .
         - sudo -u builder makepkg -s --noconfirm
         - mkdir output
